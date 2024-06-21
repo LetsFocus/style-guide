@@ -1,4 +1,3 @@
-﻿# Style Guide:
 #  How to Review a Ticket?
 
 ### Step1:
