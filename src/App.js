@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import MainLayout from "./components/MainLayout/MainLayout";
+import MainLogin from "./components/Login/MainLogin";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
-function App() {
+export default function App() {
+  const markdownFiles = require.context('./markdown', false, /\.md$/);
+  const markdownFileNames = markdownFiles.keys().map(key => key.substring(2));
+  const firstPage = markdownFileNames[0];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+      <Routes>
+        <Route path="/" element={<MainLogin firstPage={firstPage}/>}/>
+        {markdownFileNames.map(file => {
+            return (
+              <Route
+                key={file}
+                path={`/:file`}
+                element={<ProtectedRoute><MainLayout markdownFileNames={markdownFileNames} /></ProtectedRoute>}
+              />
+            );
+          })}
+      </Routes>
     </div>
   );
 }
-
-export default App;

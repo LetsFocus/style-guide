@@ -1,0 +1,354 @@
+/* styles.css */
+
+/* Common styles, animations, and keyframes from your original code */
+
+:root {
+    --_size: clamp(300px, 65vmin, 800px);
+}
+
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(40deg, #252934, #16181d);
+}
+
+button {
+    padding: 0.6em 1em;
+    border: 2px solid transparent;
+    border-radius: 10em;
+    cursor: pointer;
+    transition: all 0.4s;
+    background: #7989dd;
+    color: white;
+    font-weight: 600;
+    font-size: 1em;
+    position: relative;
+    overflow: hidden;
+}
+
+button .glow {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #7989dd, #98c0ef);
+    filter: blur(1em);
+    opacity: 0.2;
+    position: absolute;
+    top: -0.1em;
+    left: 0;
+    border-radius: 10em;
+    transition: opacity 0.4s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #7989dd;
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 8px rgba(32, 56, 106, 0.4);
+}
+
+button:hover .glow {
+    opacity: 0.3;
+}
+
+button .contact-btn-content {
+    position: absolute;
+    width: 100%;
+}
+
+body.gold button {
+    background: #d8bd10;
+    color: black;
+}
+
+body.gold button .glow {
+    background: linear-gradient(45deg, #d8bd10, #998c29);
+}
+
+body.gold button:hover {
+    background: #998c29;
+    color: black;
+    box-shadow: 0 4px 8px rgba(108, 94, 19, 0.4);
+}
+
+/* Hero Section */
+.hero {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 700;
+    position: absolute;
+    top: 44vh;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+}
+
+.heroT {
+    line-height: 1.2em;
+    font-size: max(calc(var(--_size) * 0.2), 40px);
+    letter-spacing: -0.02em;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: relative;
+    perspective: 300px;
+}
+
+.heroT > h2:nth-child(1) {
+    background: linear-gradient(40deg, #bec7f0, #6c8cc1);
+    -webkit-background-clip: text;
+    color: transparent;
+    translate: 0 0.04em;
+    position: absolute;
+    width: 100%;
+}
+
+.heroT > h2:nth-child(2) {
+    background: linear-gradient(40deg, #7989dd, #98c0ef);
+    -webkit-background-clip: text;
+    color: transparent;
+    transform: rotateX(18deg);
+    display: inline-block;
+    perspective: 300px;
+    transform-origin: bottom;
+    z-index: -1;
+    animation: load 1s ease-in 2s forwards, hero 3s ease-in-out 2s infinite;
+}
+
+@keyframes hero {
+    0% {
+        transform: rotateX(18deg) translateZ(0.04em);
+    }
+    40% {
+        transform: rotateX(18deg) translateZ(0.18em);
+    }
+    100% {
+        transform: rotateX(18deg) translateZ(0.04em);
+    }
+}
+
+.heroP {
+    color: white;
+    position: relative;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.6em;
+    letter-spacing: 0.02em;
+    margin-top: 0;
+    z-index: 2;
+    text-align: center;
+    opacity: 0;
+    translate: 0 0.4em;
+    animation: load 2s ease-in 3.2s forwards;
+}
+
+.heroSubP {
+    position: relative;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    translate: 0 0.8em;
+    animation: load 2s ease-in 2.4s forwards;
+}
+
+.hero-spacer {
+    height: 52vh;
+}
+
+/* Content Section */
+.content-section {
+    color: #bad6f7;
+    text-align: center;
+    padding: 0 1.2em 6em;
+    position: relative;
+}
+
+.content-section .content-acc {
+    height: 1px;
+    position: relative;
+    z-index: 2;
+}
+
+.content-section .content-acc > div {
+    width: 60%;
+    height: 1px;
+    background: #67748f;
+    margin: 0.2em auto 4em;
+}
+
+.content-section .content-acc > div:nth-child(1) {
+    width: 80%;
+}
+
+.content-section .content-acc > div:nth-child(2) {
+    width: 40%;
+}
+
+.content-section .title {
+    margin: 0.6em 0;
+    line-height: 1.1em;
+    font-size: 1.6em;
+    text-transform: uppercase;
+}
+
+.content-section .subt, .content-section .subp {
+    line-height: 1.6em;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.content-section .subt {
+    opacity: 0.6;
+}
+
+/* Accent Lines */
+.accent-lines {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.accent-lines > div:nth-child(1) {
+    width: min(9em, 9vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.accent-lines > div:nth-child(2) {
+    width: min(7em, 9vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8em;
+    filter: blur(3px);
+}
+
+.accent-lines > div > div {
+    border-radius: 50%;
+    width: 1px;
+    height: 9em;
+    background: linear-gradient(to bottom, transparent, #bad6f7);
+    animation: grow 6s ease-out 2s forwards, blink 10s ease-in-out infinite;
+    opacity: 0;
+}
+
+.accent-lines > div > div:nth-child(1) {
+    animation-duration: 6s;
+    animation-delay: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+.accent-lines > div > div:nth-child(2) {
+    animation-duration: 5s;
+    animation-delay: 2.4s;
+    animation-timing-function: ease-in-out;
+}
+
+.accent-lines > div > div:nth-child(3) {
+    animation-duration: 6.2s;
+    animation-delay: 2.4s;
+    animation-timing-function: ease-in-out;
+}
+
+.accent-lines > div > div:nth-child(4) {
+    animation-duration: 6.8s;
+    animation-delay: 3s;
+    animation-timing-function: ease-in-out;
+}
+
+.accent-lines > div > div:nth-child(5) {
+    animation-duration: 6.6s;
+    animation-delay: 2.2s;
+    animation-timing-function: ease-in-out;
+}
+
+.accent-lines > div > div:nth-child(6) {
+    animation-duration: 5.8s;
+    animation-delay: 2.6s;
+    animation-timing-function: ease-in-out;
+}
+
+.accent-lines > div > div:nth-child(7) {
+    animation-duration: 5.6s;
+    animation-delay: 2.5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes blink {
+    0%, 100% { background: linear-gradient(to bottom, transparent, #bad6f7);}
+    50% { background: linear-gradient(to bottom, transparent, rgba(186, 214, 247, 0.5));}
+}
+
+@keyframes grow {
+    0% { height: 0; opacity: 0;}
+    100% { opacity: 1;}
+}
+
+/* Mountain Background */
+.mountains {
+    position: absolute;
+    width: 100%;
+    bottom: 4em;
+    display: flex;
+    gap: 0.2em;
+    pointer-events: none;
+}
+
+.mountain {
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(to bottom, transparent, #334156);
+    filter: blur(0.08em);
+    opacity: 0.6;
+    animation: growmountain 2s ease-out 2s forwards;
+}
+
+.mountain:first-child {
+    filter: blur(0.1em);
+}
+
+@keyframes growmountain {
+    0%, 100% { transform: scaleY(1);}
+    50% { transform: scaleY(1.2);}
+}
+.editor-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .ql-container {
+    min-height: 300px;
+  }
+  
+  .ql-editor {
+    min-height: 250px;
+    line-height: 1.6;
+  }
+  
