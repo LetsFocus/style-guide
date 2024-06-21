@@ -1,8 +1,7 @@
 // src/components/Sidebar.js
-import React, { useContext, useEffect } from 'react';
-import { Link,Outlet, useParams } from 'react-router-dom';
+import React from 'react';
+import { Link,Outlet } from 'react-router-dom';
 import './SideNav.css';
-import { ContentContext } from '../Context/Context';
 
 const Sidebar = ({ markdownFiles }) => {
 
