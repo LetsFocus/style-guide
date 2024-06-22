@@ -1,27 +1,26 @@
-.login-signup{
-    display: flex;
-    align-items: center;
-    height: 100%;
-    justify-content: center;
+.login-signup {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
 }
 
-.login-signup input{
-    width:300px;
-    padding: 15px;
-    margin: 10px 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease;
+.login-signup input {
+  width: 300px;
+  padding: 15px;
+  margin: 10px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
-
-.login-signup input:focus{
+.login-signup input:focus {
   border-color: #44318d;
-} 
+}
 
-.action-button{
+.action-button {
   background-color: #44318d;
   color: #fff;
   border: none;
@@ -34,19 +33,19 @@
 }
 
 .action-button:hover {
-    background-color: #5e49a9;
-  } 
-
-.login{
-    margin-top: 100px;
-    text-align: center;
+  background-color: #5e49a9;
 }
 
-.login h2{
-  font-size: 1.5rem;  
+.login {
+  margin-top: 100px;
+  text-align: center;
 }
 
-.support-button{
+.login h2 {
+  font-size: 1.5rem;
+}
+
+.support-button {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -54,7 +53,7 @@
   width: 200px;
 }
 
-.main-login{
+.main-login {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,7 +61,30 @@
   height: 100vh;
 }
 
-.main-login h1{
+.main-login h1 {
   font-size: 5rem;
   margin-bottom: 20px;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  .login-signup {
+      flex-direction: column;
+  }
+
+  .login-signup input, .action-button {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px 0;
+  }
+
+  .support-button {
+      width: 100%;
+      max-width: 300px;
+  }
+
+  .main-login h1 {
+      font-size: 5rem; 
+      margin-left: 10px;
+  }
 }
