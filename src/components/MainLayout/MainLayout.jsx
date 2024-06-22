@@ -23,6 +23,8 @@ function MainLayout({markdownFileNames}) {
           const firstLine = content.split('\n')[0]; // Assuming first line as header
           setHeader(firstLine.replace(/#/g, '').trim()); // Remove markdown '#' and trim spaces
           setData(content);
+          setIsSidebarOpen(false);
+
         })
         .catch(err => console.error(err));
     }, [file, setHeader, setData]);
