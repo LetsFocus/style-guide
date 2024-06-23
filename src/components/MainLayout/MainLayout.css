@@ -1,66 +1,111 @@
 .main-layout {
-    display: flex;
-    width: 100vw;
-  }
-  
-  .sidebar {
-    width: 0px;
-    height: 100vh;
-    position: sticky;
-    top:0px;
-    background-color: #333;
-    color: white;
-    transition: width 0.3s;
-    overflow: hidden;
-  }
-  
-  .sidebar.open {
-    width: 250px;
-  }
-  
-  .sidebar-header,
-  .sidebar-body {
-    padding: 20px;
-  }
-  
-  .sidebar-header {
-    background-color: #444;
-  }
-  
-  .sidebar-body {
-    background-color: #555;
-  }
-  
-  .main-content {
-    flex-grow: 1;
-    padding: 20px;
-    background-color: #f4f4f4;
-  }
-  
-  .hamburger-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .button-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  width: 100vw;
+}
+
+.sideNav {
+  width: 0;
+  height: 100vh;
+  top: 0;
+  background-color: #333;
+  color: white;
+  transition: width 0.2s;
+  position: fixed;
+}
+
+.sideNav.open {
+  width: 250px;
+  padding: 20px;
+  z-index: 10;
+}
+
+.sidebar-header,
+.sidebar-body {
+  padding: 20px;
+}
+
+.sidebar-header {
+  background-color: #444;
+}
+
+.sidebar-body {
+  background-color: #555;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+  transition: margin-left 0.3s;
+  margin-left: 0;
+}
+
+.main-content.shifted {
+  margin-left: 300px;
+}
+
+.hamburger-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-container .logout {
+  padding: 10px;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  cursor: pointer;
+  background: #44318d;
+  color: white;
+  border: none;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .sideNav.open {
+    width: 300px;
   }
 
-  .button-container .logout{
-    padding: 10px;
-    border-radius: 50%;
-    height: 60px;
-    width: 60px;
-    text-align: center;
-    cursor: pointer;
-    background:#44318d;
-    color: white;
-    border: none;
-    margin-bottom: 10px;
+  .main-content.shifted {
+    margin-left: 300px;
   }
+}
+
+@media screen and (max-width: 480px) {
+  .sideNav.open {
+    width: 100%;
+    z-index: 10;
+  }
+
+  .sideNav h3 {
+    font-size: 1.5rem;
+    margin-top: 60px;
+  }
+
+  .color {
+    color: white;;
+  }
+
+  .hamburger-button {
+    z-index: 20;
+      }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .main-content.shifted {
+    margin-left: 0;
+  }
+}
