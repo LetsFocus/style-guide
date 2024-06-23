@@ -108,4 +108,18 @@
   .main-content.shifted {
     margin-left: 0;
   }
+
+.button-container .logout {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background: #44318d;
+  color: white;
+  font-size: 8px;
+  border: none;
+  display: flex ;
+  align-items: center;
+  justify-content: center;
+}
 }
