@@ -1,13 +1,12 @@
 /* src/components/Sidebar.css */
+
 .sideNav {
-    width: 200px;
-    background-color: #333;
-    padding: 20px;
-    height: 100%;
-    border-right: 1px solid #ddd;
-    overflow-y:scroll ;
-  }
-  
+  background-color: #333;
+  padding: 0px;
+  height: 100%;
+  border-right: 1px solid #ddd;
+  overflow-y:scroll ;
+}
   .sidebar ol {
     list-style-type: none;
     padding: 0;
