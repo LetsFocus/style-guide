@@ -3,13 +3,13 @@ import 'firebase/compat/auth';  // Import auth module for authentication
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAA9Q2Pi_bHbYFDvLjxi0qISiVIFIFfo1E",
-    authDomain: "guidelines-54d83.firebaseapp.com",
-    projectId: "guidelines-54d83",
-    storageBucket: "guidelines-54d83.appspot.com",
-    messagingSenderId: "824291850520",
-    appId: "1:824291850520:web:77141a27d843ebab93c66d",
-    measurementId: "G-G23WJYGHVZ"
+    apiKey: process.env.REACT_APP_APIKEY,
+    authDomain:process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId,
+    measurementId: process.env.REACT_APP_measurementId
   };
 
 // Initialize Firebase
